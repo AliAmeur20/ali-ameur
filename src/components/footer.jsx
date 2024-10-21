@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="relative footer bg-base-100 items-center p-4 h-28">
+        <footer className="relative footer bg-base-100 items-center p-4 text-white" style={{ backgroundImage: "url('./herobg.png')" }}>
             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-secondary to-primary"></div>
             <aside className="grid-flow-col items-center">
                 <svg
