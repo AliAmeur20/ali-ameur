@@ -33,7 +33,7 @@ function HeroSection() {
     };
 
     return (
-        <div className="hero min-h-[75vh] md:min-h-[80vh] lg:min-h-[90vh] 3xl:min-h-[95vh] 4xl:min-h-screen text-white md:mt-20 transition-shadow duration-300" style={{ backgroundImage: "url('./herobg.png')" }}>
+        <div className="hero min-h-[75vh] md:min-h-[80vh] lg:min-h-screen text-white md:mt-20 transition-shadow duration-300" style={{ backgroundImage: "url('./herobg.png')" }}>
             <div className="hero-content">
                 <div className="flex text-center">
                     <div className=''>
