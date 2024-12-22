@@ -35,6 +35,22 @@ function Navbar() {
         };
     }, []);
 
+    const handleDownload = () => {
+        // Create an invisible anchor element
+        const link = document.createElement('a');
+        link.href = '/Ali Ameur.pdf'; // Path to your CV file
+        link.download = 'Ali Ameur.pdf'; // The name the file will be saved as
+
+        // Append the link to the body (not visible)
+        document.body.appendChild(link);
+
+        // Programmatically click the link to trigger the download
+        link.click();
+
+        // Clean up and remove the link from the document
+        document.body.removeChild(link);
+    };
+
     return (
         <div className={`bg-base-100 flex justify-center items-center relative pe-4 md:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'h-20 shadow-md' : 'h-20 lg:h-24'}`}>
             <div className='navbar container mx-auto'>
@@ -83,8 +99,8 @@ function Navbar() {
                         </svg>
                     </label>
                     <div className='space-x-2 hidden md:block'>
-                        <div className='btn btn-primary rounded-none'>Contact</div>
-                        <div className='btn btn-neutral rounded-none'>
+                        <a href="#contact" className='btn btn-primary rounded-none'>Contact</a>
+                        <div className='btn btn-neutral rounded-none' onClick={handleDownload}>
                             <span>CV</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />

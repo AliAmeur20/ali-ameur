@@ -47,7 +47,7 @@ function HeroSection() {
                             web and mobile applications.
                         </div>
                         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8">
-                            <div className='btn btn-lg btn-secondary px-14'>Contact me</div>
+                            <a href="#contact" className='btn btn-lg btn-secondary px-14'>Contact me</a>
                             <div className='btn btn-lg btn-neutral' onClick={handleDownload}>
                                 Download CV
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7 ml-1">
