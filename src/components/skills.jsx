@@ -4,7 +4,7 @@ import { icons } from '../constants'
 function Skills() {
     return (
         <div className='md:px-8'>
-            <div className='px-4 md:px-0 text-xl md:text-2xl lg:text-3xl font-extrabold mb-6 md:mb-8 text-primary'>Skills</div>
+            {/* <div className='px-4 md:px-0 text-xl md:text-2xl lg:text-3xl font-extrabold mb-6 md:mb-8 text-primary'>Skills</div> */}
             <div className='lg:px-20'>
                 <div className='flex flex-wrap justify-center gap-8'>
                     <SkillBox alt="tailwind" icon={icons.tailwind} skill="Tailwind CSS" />

@@ -3,6 +3,12 @@ import { useState } from "react";
 function Contact() {
 
     const [copy, setCopy] = useState(false);
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [error, setError] = useState('');
     const email = "aa8414952@gmail.com";
 
     const copyToClipboard = () => {
@@ -16,33 +22,84 @@ function Contact() {
         });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (form.email === "" ||
+            form.name === "" ||
+            form.message === "") {
+            return setError("please fill the necessary fields!");
+        }
+    }
+
     return (
         <div className='flex justify-center lg:justify-evenly'>
             <div className='pb-16 pt-8 md:pt-12 bg-base-100 rounded-3xl mx-4 md:mx-0 px-4 w-full md:px-16 md:w-10/12 lg:w-1/3'>
                 <div className='text-xl md:text-2xl lg:text-3xl font-extrabold mb-3 text-primary'>Contact</div>
-                <div className=''>
+                <form onSubmit={handleSubmit}>
                     <div className='space-y-3 mt-4 w-full'>
                         <label className="form-control">
                             <div className="label">
                                 <span className="label-text font-semibold">name <span className='text-error'>*</span></span>
                             </div>
-                            <input type="text" placeholder="your name" className="input input-bordered w-full focus:input-primary" />
+                            <input
+                                type="text"
+                                placeholder="your name"
+                                className={`input input-bordered w-full focus:input-primary ${error && !form.name && 'input-error ring-1 ring-error'}`}
+                                value={form.name}
+                                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                            />
                         </label>
                         <label className="form-control">
                             <div className="label">
                                 <span className="label-text font-semibold">email <span className='text-error'>*</span></span>
                             </div>
-                            <input type="email" placeholder="your email" className="input input-bordered w-full focus:input-primary" />
+                            <input
+                                type="email"
+                                placeholder="your email"
+                                className={`input input-bordered w-full focus:input-primary ${error && !form.email && 'input-error ring-1 ring-error'}`}
+                                value={form.email}
+                                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                            />
                         </label>
                         <label className="form-control">
                             <div className="label">
                                 <span className="label-text font-semibold">Message <span className='text-error'>*</span></span>
                             </div>
-                            <textarea className="textarea textarea-bordered h-32 focus:textarea-primary" placeholder="TYpe here"></textarea>
+                            <textarea
+                                className={`textarea textarea-bordered h-32 focus:textarea-primary ${error && !form.message && 'textarea-error ring-1 ring-error'}`}
+                                placeholder="Type here"
+                                value={form.message}
+                                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                            >
+                            </textarea>
                         </label>
                     </div>
+
+                    {error && (
+                        <div>
+                            <div className="flex items-center absolute">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="size-6 text-error mx-1 my-2"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                                        clipRule="evenodd"
+                                    />
+                                </svg>
+                                <div className="text-error text-sm font-semibold mx-1 my-2">
+                                    {error}
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     <div className='flex mt-10 gap-x-3'>
-                        <div className='btn btn-secondary px-8'>Send message</div>
+                        <button className='btn btn-secondary px-8' type='submit'>Send message</button>
                         {!copy
                             ?
                             <div className='btn btn-outline hover:space-x-1' onClick={copyToClipboard}>
@@ -60,9 +117,21 @@ function Contact() {
                             </div>
                         }
                     </div>
+                </form>
+            </div>
+            <div className='justify-center items-center rounded-3xl w-1/3 hidden lg:flex'>
+                <div className="mockup-code w-full">
+                    <br />
+                    <pre data-prefix="$" className="text-lg"><code>Let’s Build</code></pre>
+                    <br />
+                    <pre data-prefix=">" className="text-warning text-lg"><code>Something ..</code></pre>
+                    <br />
+                    <pre data-prefix="" className="bg-warning py-3 text-warning-content text-xl font-bold"><code>Extraordinary</code></pre>
+                    <br />
+                    <pre data-prefix=">" className="text-success text-lg"><code>Together!</code></pre>
+                    <br />
                 </div>
             </div>
-            <div className='bg-base-100 rounded-3xl w-1/3 hidden lg:block'></div>
         </div>
     )
 }

@@ -36,7 +36,7 @@ function Navbar() {
     }, []);
 
     return (
-        <div className={`bg-base-100 flex justify-center items-center relative pe-4 md:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'h-20 shadow-md' : 'h-24'}`}>
+        <div className={`bg-base-100 flex justify-center items-center relative pe-4 md:fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'h-20 shadow-md' : 'h-20 lg:h-24'}`}>
             <div className='navbar container mx-auto'>
                 <div className="flex-1">
 

@@ -33,15 +33,15 @@ function HeroSection() {
     };
 
     return (
-        <div className="hero min-h-[75vh] md:min-h-[80vh] lg:min-h-screen text-white md:mt-20 transition-shadow duration-300" style={{ backgroundImage: "url('./herobg.png')" }}>
+        <div className="hero min-h-[80vh] lg:min-h-0 lg:h-[900px] text-white md:mt-20 transition-shadow duration-300" style={{ backgroundImage: "url('./herobg.png')" }}>
             <div className="hero-content">
                 <div className="flex text-center">
                     <div className=''>
-                        <div className='text-[44px] md:text-[60px] font-black'>Hi, I'm <span className='text-primary'>Ali</span></div>
-                        <div className='text-[33px] md:text-[57px] font-black'>a Full-Stack Developer</div>
-                        <div className='text-[23px] md:text-[40px] font-semibold'>
+                        <div className='text-[44px] md:text-[53px] font-bold'>Hi, I'm <span className='text-primary'>Ali</span></div>
+                        <div className='text-[33px] md:text-[50px] font-bold'>a Full-Stack Developer</div>
+                        <div className='text-[23px] md:text-[35px] font-semibold'>
                             specializing in building{' '}
-                            <span className='text-secondary text-[44px] md:text-[55px] font-black'>
+                            <span className='text-secondary text-[40px] md:text-[50px] font-bold'>
                                 {currentWord}
                             </span><br />
                             web and mobile applications.

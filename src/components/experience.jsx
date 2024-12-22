@@ -1,9 +1,9 @@
 function Experience() {
     
     return (
-        <div className='px-4 md:px-8'>
+        <div className='px-4 md:px-8 py-4'>
             <div className='text-xl md:text-2xl lg:text-3xl font-extrabold mb-3 md:mb-8 text-primary'>Experience</div>
-            <div className='bg-base-100 px-4 py-12 rounded-3xl'>
+            <div className='px-4 py-4 md:py-12'>
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     <li>
                         <div className="timeline-middle">
